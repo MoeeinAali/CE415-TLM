@@ -1,0 +1,87 @@
+\subsectionaddtolist{الف}
+\[
+    L = \{w \in \{a\}^* : |w| \  mod \ 3 > 0\}
+    \]
+این زبان شامل تمام رشته‌هایی از حرف $a$ است که طول آن‌ها مضرب ۳ نباشد. به عبارت دیگر، باقی‌مانده طول رشته بر ۳ برابر با ۱ یا ۲ باشد. 
+
+سه متغیر $S$ (باقی‌مانده ۰)، $A$ (باقی‌مانده ۱) و $B$ (باقی‌مانده ۲) را تعریف می‌کنیم. از آنجا که باقی‌مانده‌های ۱ و ۲ مورد قبول هستند، متغیرهای $A$ و $B$ می‌توانند به رشته تهی ($\lambda$) ختم شوند.
+
+\[
+\begin{aligned}
+    S &\rightarrow aA \\
+    A &\rightarrow aB \mid \lambda \\
+    B &\rightarrow aS \mid \lambda
+\end{aligned}
+\]
+
+\subsectionaddtolist{ب}
+\[
+    L = \{a^n b^m : n + m = odd\}
+    \]
+رشته‌ها از تعدادی $a$ و سپس تعدادی $b$ تشکیل شده‌اند، به طوری که مجموع طول کل رشته فرد باشد. این یعنی زوجیت تعداد $a$ها و $b$ها متفاوت است.
+
+\begin{itemize}
+    \item $S$: حالت شروع (تعداد $a$ زوج، تولید $b$ شروع نشده)
+    \item $A$: تعداد $a$ فرد، تولید $b$ شروع نشده
+    \item $B_e$: مرحله تولید $b$، به طوری که مجموع کل طول تا این لحظه زوج است
+    \item $B_o$: مرحله تولید $b$، به طوری که مجموع کل طول تا این لحظه فرد است
+\end{itemize}
+
+\[
+\begin{aligned}
+    S &\rightarrow aA \mid bB_o \\
+    A &\rightarrow aS \mid bB_e \mid \lambda \\
+    B_e &\rightarrow bB_o \\
+    B_o &\rightarrow bB_e \mid \lambda
+\end{aligned}
+\]
+
+\subsectionaddtolist{ج}
+
+\[
+L = \{vwv : v, w \in \{a,b\}^*, |v| = 2\}
+\]
+
+رشته با یک زیررشته به طول ۲ ($v$) شروع شده و با همان زیررشته به پایان می‌رسد. از آنجا که $v \in \{aa, ab, ba, bb\}$ است، گرامر مسیرهای تولید را بر اساس ابتدای رشته تفکیک کرده و پایانی متناظر با آن را تضمین می‌کند.
+
+
+\[
+\begin{aligned}
+    S &\rightarrow aS_{a} \mid bS_{b} \\
+    S_{a} &\rightarrow aS_{aa} \mid bS_{ab} \\
+    S_{b} &\rightarrow aS_{ba} \mid bS_{bb} \\
+    \\
+    S_{aa} &\rightarrow aS_{aa} \mid bS_{aa} \mid aA_{aa} \\
+    A_{aa} &\rightarrow a \\
+    \\
+    S_{ab} &\rightarrow aS_{ab} \mid bS_{ab} \mid aA_{ab} \\
+    A_{ab} &\rightarrow b \\
+    S_{ba} &\rightarrow aS_{ba} \mid bS_{ba} \mid bA_{ba} \\
+    A_{ba} &\rightarrow a \\
+    \\
+    S_{bb} &\rightarrow aS_{bb} \mid bS_{bb} \mid bA_{bb} \\
+    A_{bb} &\rightarrow b
+\end{aligned}
+\]
+% ----------------------------------------------------------------------
+\subsectionaddtolist{د}
+
+\[
+\text{ مجموعه تمام اعداد در مبنای ۴ که به عدد ۷ بخش‌پذیرند}
+\]
+
+الفبا $\Sigma = \{0, 1, 2, 3\}$ است. متغیرهای $R_0$ تا $R_6$ نشان‌دهنده باقی‌مانده عدد تولید شده تا این لحظه بر ۷ هستند. با اضافه شدن رقم $d$ در مبنای ۴، باقی‌مانده جدید از رابطه $R_{\text{new}} = (R_{\text{old}} \times 4 + d) \pmod 7$ محاسبه می‌شود.
+
+با محاسبه انتقال‌ها برای تمامی حالات، گرامر زیر حاصل می‌شود:
+
+\[
+\begin{aligned}
+    R_0 &\rightarrow 0R_0 \mid 1R_1 \mid 2R_2 \mid 3R_3 \mid \lambda \\
+    R_1 &\rightarrow 0R_4 \mid 1R_5 \mid 2R_6 \mid 3R_0 \\
+    R_2 &\rightarrow 0R_1 \mid 1R_2 \mid 2R_3 \mid 3R_4 \\
+    R_3 &\rightarrow 0R_5 \mid 1R_6 \mid 2R_0 \mid 3R_1 \\
+    R_4 &\rightarrow 0R_2 \mid 1R_3 \mid 2R_4 \mid 3R_5 \\
+    R_5 &\rightarrow 0R_6 \mid 1R_0 \mid 2R_1 \mid 3R_2 \\
+    R_6 &\rightarrow 0R_3 \mid 1R_4 \mid 2R_5 \mid 3R_6
+\end{aligned}
+\]
