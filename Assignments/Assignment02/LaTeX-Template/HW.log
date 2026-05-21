@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  21 MAY 2026 16:07
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  21 MAY 2026 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1284,7 +1284,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[6] (./questions/3.tex)
+[6] (./questions/3.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 8.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 9.
+
+LaTeX Font Info:    Font shape `TU/XBNiloofar.ttf(0)/m/n' will be
+(Font)              scaled to size 5.99998pt on input line 24.
+)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1340,15 +1349,18 @@ L3 programming layer <2025-01-18>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31154 strings out of 473832
- 633510 string characters out of 5729482
+ 31158 strings out of 473832
+ 633679 string characters out of 5729482
  1245823 words of memory out of 5000000
- 53582 multiletter control sequences out of 15000+600000
- 561224 words of font info for 86 fonts, out of 8000000 for 9000
+ 53585 multiletter control sequences out of 15000+600000
+ 561232 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  103i,12n,107p,2348b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
