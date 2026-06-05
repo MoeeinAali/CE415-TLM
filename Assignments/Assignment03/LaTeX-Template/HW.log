@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  5 JUN 2026 22:50
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  5 JUN 2026 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1234,7 +1234,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[2] (./questions/2.tex)
+[2] (./questions/2.tex
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 20.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 23.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 26.
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1243,7 +1253,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[3] (./questions/3.tex)
+[3]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 46.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 49.
+
+)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1252,7 +1269,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[4] (./questions/4.tex)
+[4] (./questions/3.tex)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1261,7 +1278,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[5] (./questions/5.tex)
+[5] (./questions/4.tex)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1270,7 +1287,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[6] (./questions/6.tex)
+[6] (./questions/5.tex)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1279,7 +1296,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[7] (./questions/7.tex)
+[7] (./questions/6.tex)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1288,7 +1305,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
 
-[8] 
+[8] (./questions/7.tex)
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 15.76752pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.76752pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-3.76752pt}.
+
+[9] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./HW.aux)
  ***********
@@ -1303,12 +1329,12 @@ Package rerunfilecheck Info: File `HW.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31155 strings out of 473832
- 633602 string characters out of 5729482
- 1247823 words of memory out of 5000000
- 53582 multiletter control sequences out of 15000+600000
+ 31162 strings out of 473832
+ 633791 string characters out of 5729482
+ 1248823 words of memory out of 5000000
+ 53589 multiletter control sequences out of 15000+600000
  561232 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 103i,11n,107p,2348b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 103i,11n,107p,2348b,419s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HW.pdf (8 pages).
+Output written on HW.pdf (9 pages).
