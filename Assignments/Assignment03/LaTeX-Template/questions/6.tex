@@ -1,0 +1,58 @@
+این گرامر {مبهم} است. علت اصلی ابهام در این گرامر به ساختار قواعد آن در مواجهه با عبارت‌های حرف اضافه‌ای (مانند عبارت شامل کلمه کلیدی \lr{\texttt{with}}) برمی‌گردد. زمانی که این عبارت در انتهای جمله قرار می‌گیرد، از نظر ساختار نحوی مشخص نیست که به کدام بخش از جمله متصل یا وابسته است.
+
+در قواعد این گرامر، متغیر $P_P$ (عبارت حرف اضافه‌ای) هم می‌تواند از طریق قاعده $P_V \rightarrow C_V P_P$ به طور مستقیم به بخش فعلی جمله متصل شود و هم می‌تواند از طریق قاعده $P_N \rightarrow C_N P_P$ به اسم مفعول قبل از خود وابسته باشد. به همین دلیل، یک جمله می‌تواند دو معنای کاملاً متفاوت داشته باشد؛ به عنوان مثال دانش‌آموز کتاب را «در محیط کلاس / به همراه کلاس» دوست دارد، یا اینکه دانش‌آموز کتابِ «مخصوص به آن کلاس» را دوست دارد.
+
+برای اثبات ساختاری و قطعی این ابهام، رشته نمونه جدید زیر را در نظر می‌گیریم:
+\[ w = \text{\lr{the student loves the textbook with the class}} \]
+
+اشتقاق چپ‌مدار اول:
+در این حالت، اتصال $P_P$ به فعل با استفاده از قاعده $P_V \rightarrow C_V P_P$ صورت می‌گیرد که بیان‌گر این است که توصیفِ حرف اضافه، به کلِ عملِ دوست داشتن بازمی‌گردد:
+
+\begin{latin}
+\begin{align*}
+S & \Rightarrow P_N P_V \\
+  & \Rightarrow C_N P_V \\
+  & \Rightarrow A N P_V \\
+  & \Rightarrow \text{the } N P_V \\
+  & \Rightarrow \text{the student } P_V \\
+  & \Rightarrow \text{the student } C_V P_P \\
+  & \Rightarrow \text{the student } V P_N P_P \\
+  & \Rightarrow \text{the student loves } P_N P_P \\
+  & \Rightarrow \text{the student loves } C_N P_P \\
+  & \Rightarrow \text{the student loves } A N P_P \\
+  & \Rightarrow \text{the student loves the } N P_P \\
+  & \Rightarrow \text{the student loves the textbook } P_P \\
+  & \Rightarrow \text{the student loves the textbook } P C_N \\
+  & \Rightarrow \text{the student loves the textbook with } C_N \\
+  & \Rightarrow \text{the student loves the textbook with } A N \\
+  & \Rightarrow \text{the student loves the textbook with the } N \\
+  & \Rightarrow \text{the student loves the textbook with the class}
+\end{align*}
+\end{latin}
+
+اشتقاق چپ‌مدار دوم:
+در این حالت، اتصال $P_P$ به اسم مفعول با استفاده از قاعده $P_N \rightarrow C_N P_P$ صورت می‌گیرد که بیان‌گر این است که عبارت حرف اضافه‌ای، صرفاً توصیف‌کنندهٔ خود کتاب است:
+
+\begin{latin}
+\begin{align*}
+S & \Rightarrow P_N P_V \\
+  & \Rightarrow C_N P_V \\
+  & \Rightarrow A N P_V \\
+  & \Rightarrow \text{the } N P_V \\
+  & \Rightarrow \text{the student } P_V \\
+  & \Rightarrow \text{the student } C_V \\
+  & \Rightarrow \text{the student } V P_N \\
+  & \Rightarrow \text{the student loves } P_N \\
+  & \Rightarrow \text{the student loves } C_N P_P \\
+  & \Rightarrow \text{the student loves } A N P_P \\
+  & \Rightarrow \text{the student loves the } N P_P \\
+  & \Rightarrow \text{the student loves the textbook } P_P \\
+  & \Rightarrow \text{the student loves the textbook } P C_N \\
+  & \Rightarrow \text{the student loves the textbook with } C_N \\
+  & \Rightarrow \text{the student loves the textbook with } A N \\
+  & \Rightarrow \text{the student loves the textbook with the } N \\
+  & \Rightarrow \text{the student loves the textbook with the class}
+\end{align*}
+\end{latin}
+
+از آنجا که موفق شدیم برای یک رشتهٔ مشخص و واحد ($w$)، دو اشتقاق چپ‌مدار (\lr{Leftmost Derivation}) کاملاً متمایز و مستقل ارائه دهیم، مبهم بودن این گرامر به صورت قطعی، مستدل و با جزئیات کامل اثبات می‌شود.
