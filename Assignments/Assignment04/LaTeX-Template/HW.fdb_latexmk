@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1783357941.34394 "/Users/moeein/Documents/SUT-Courses/CE415-TLM/Assignments/Assignment04/LaTeX-Template/HW.tex" "HW.pdf" "HW" 1783357941.74391 2
+["pdflatex"] 1783360942.62972 "/Users/moeein/Documents/SUT-Courses/CE415-TLM/Assignments/Assignment04/LaTeX-Template/HW.tex" "HW.pdf" "HW" 1783360943.07456 2
   "/Users/moeein/Documents/SUT-Courses/CE415-TLM/Assignments/Assignment04/LaTeX-Template/HW.tex" 1783349172.38714 2090 53e1a27631d25607b8d5d73b30479892 ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -99,6 +99,7 @@
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def" 1713382759 19440 9da9dcbb27470349a580fca7372d454b ""
+  "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/xetex.def" 1663965824 14788 1dde73f396dd97d88c838bee2a352abe ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty" 1730496337 18363 dee506cb8d56825d8a4d020f5d5f8704 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty" 1717359999 8010 6f2ad8c2b2ffbd607af6475441c7b5e4 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty" 1717359999 2671 70891d50dac933918b827d326687c6e8 ""
