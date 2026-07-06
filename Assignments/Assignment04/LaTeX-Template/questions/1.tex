@@ -23,6 +23,66 @@
     \end{itemize}
 \end{enumerate}
 
+\begin{tikzpicture}[
+    shorten >=1pt, 
+    auto, 
+    thick, 
+    >=Stealth,
+    every edge node/.style={align=center, font=\small, fill=white, inner sep=2pt}
+]
+
+    % نقطه شروع
+    \node[state, initial, initial text=] (q0) at (-4, 0) {$q_0$};
+    
+    % فاز اول (فشرده‌تر شده)
+    \node[state] (q1) at (0, 3) {$q_1$};
+    \node[state] (q2) at (-4, 3) {$q_2$};
+    
+    % فاز دوم (کشیده شده به سمت چپ)
+    \node[state] (q4) at (2, 0) {$q_4$};
+    \node[state] (q5) at (7.5, 0) {$q_5$};
+    \node[state] (q3) at (4.75, -2.5) {$q_3$};
+    
+    % فاز تایید نهایی و پذیرش 
+    \node[state] (q6) at (4.75, -10) {$q_6$};
+    \node[state, accepting] (qacc) at (8.5, -5) {$q_{acc}$};
+
+    % یال‌های فاز اول
+    \path[->]
+        (q0) edge node[left] {$a \to X, R$} (q1)
+        (q1) edge [loop right] node {$a \to a, R$ \\ $Y \to Y, R$} (q1)
+        (q1) edge node[above] {$b \to Y, L$} (q2)
+        (q2) edge [loop left] node {$a \to a, L$ \\ $Y \to Y, L$} (q2)
+        (q2) edge node[below left] {$X \to X, R$} (q0);
+
+    % انتقال از فاز اول به فاز دوم
+    \path[->]
+        (q0) edge node[above] {$Y \to Z, R$ \\ $b \to Z, R$} (q4);
+
+    % یال‌های فاز دوم
+    \path[->]
+        (q4) edge [loop above] node {$Y \to Y, R$ \\ $b \to b, R$ \\ $W \to W, R$} (q4)
+        (q4) edge node[above] {$c \to W, L$} (q5)
+        (q5) edge [loop above] node {$Y \to Y, L$ \\ $b \to b, L$ \\ $W \to W, L$} (q5)
+        (q5) edge node[below right] {$Z \to Z, R$} (q3)
+        (q3) edge node[below left] {$Y \to Z, R$ \\ $b \to Z, R$} (q4);
+
+    % یال‌های تایید نهایی و پایان
+    \path[->]
+        (q0) edge node[below left, pos=0.6] {$c \to c, R$} (q6)
+        
+        % قوس تنظیم شده برای جلوگیری از برخورد با q6
+        (q0) edge [out=-90, in=210, looseness=1.3] node[below left] {$\sqcup \to \sqcup, R$} (qacc)
+        
+        (q3) edge node[left] {$c \to c, R$ \\ $W \to W, R$} (q6)
+        (q3) edge node[above right] {$\sqcup \to \sqcup, R$} (qacc)
+        
+        (q6) edge [loop below] node {$c \to c, R$ \\ $W \to W, R$} (q6)
+        (q6) edge node[above] {$\sqcup \to \sqcup, R$} (qacc);
+
+\end{tikzpicture}
+
+
 \subsectionaddtolist{د}
 برای زبان $L_4 = \{ \langle x, y, z \rangle \mid x = y + z, \Sigma = \{1\} \}$، با توجه به اینکه الفبا فقط شامل نماد ۱ است، ورودی‌ها به صورت سیستم اعداد یکانی روی نوار قرار دارند. فرض متعارف این است که این سه ورودی با یک نماد جداکننده مانند $\#$ از هم جدا شده‌اند، یعنی نوار در ابتدا حاوی رشته $1^x \# 1^y \# 1^z$ است. 
 
@@ -53,3 +113,61 @@
         \item اگر در بلوک $x$ هنوز نماد ۱ خط‌نخورده وجود داشت، یعنی $x > y + z$ بوده و در این حالت ماشین ورودی را رد می‌کند.
     \end{itemize}
 \end{enumerate}
+
+
+\begin{tikzpicture}[
+    shorten >=1pt, 
+    node distance=2.5cm and 3cm, 
+    on grid, 
+    auto, 
+    thick, 
+    >=Stealth,
+    every edge node/.style={align=center, font=\small}
+]
+
+    % States
+    \node[state, initial, initial text=] (q0) {$q_0$};
+    \node[state] (q1) [right=3.5cm of q0] {$q_1$};
+    \node[state] (q2) [right=3.5cm of q1] {$q_2$};
+    \node[state] (q4) [right=3.5cm of q2] {$q_4$};
+
+    \node[state] (q3) [below=5cm of q2] {$q_3$}; % Return from y
+    \node[state] (q5) [below=3cm of q4] {$q_5$}; % Return from z
+
+    \node[state] (q6) [below=4cm of q0] {$q_6$};
+    \node[state, accepting] (qacc) [left=4cm of q6] {$q_{acc}$};
+
+    % Crossing out x
+    \path[->]
+        (q0) edge node {$1 \to X, R$} (q1)
+        (q0) edge node [left] {$\# \to \#, R$} (q6);
+
+    % Finding 1 in y block
+    \path[->]
+        (q1) edge [loop above] node {$1 \to 1, R$} (q1)
+        (q1) edge node {$\# \to \#, R$} (q2)
+        (q2) edge [loop above] node {$Y \to Y, R$} (q2)
+        (q2) edge node {$1 \to Y, L$} (q3)
+        (q2) edge node {$\# \to \#, R$} (q4); % y is empty, go to z
+
+    % Returning from y to x
+    \path[->]
+        (q3) edge [loop below] node {$Y \to Y, L$ \\ $\# \to \#, L$ \\ $1 \to 1, L$} (q3)
+        (q3) edge node {$X \to X, R$} (q0);
+
+    % Finding 1 in z block (when y is exhausted)
+    \path[->]
+        (q4) edge [loop above] node {$Z \to Z, R$} (q4)
+        (q4) edge node {$1 \to Z, L$} (q5);
+
+    % Returning from z to x
+    \path[->]
+        (q5) edge [loop below] node {$Z \to Z, L$ \\ $\# \to \#, L$ \\ $Y \to Y, L$ \\ $1 \to 1, L$} (q5)
+        (q5) edge node {$X \to X, R$} (q0);
+
+    % Final Verification (x is exhausted, checking y and z)
+    \path[->]
+        (q6) edge [loop below] node {$Y \to Y, R$ \\ $Z \to Z, R$ \\ $\# \to \#, R$} (q6)
+        (q6) edge node [left] {$\sqcup \to \sqcup, R$} (qacc);
+
+\end{tikzpicture}
